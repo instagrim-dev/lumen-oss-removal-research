@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "manifest_version": "0.1-draft",
+  "status": "draft",
+  "operative": false,
+  "research": {
+    "protocol": "RESEARCH_PROTOCOL.md",
+    "purpose": "Descriptive analysis of Lumen notices referencing selected open-source ecosystems",
+    "primary_artifact": "Public policy research brief"
+  },
+  "access": {
+    "status": "pending",
+    "authenticated_collection": false
+  },
+  "queries": [],
+  "query_design": {
+    "ecosystem_identifiers": [],
+    "facets": [],
+    "exclusions": []
+  },
+  "terms_review": {
+    "status": "pending",
+    "reviewed_at": null,
+    "source_url": null,
+    "terms_version": null
+  },
+  "study_interval": {
+    "provisional_start": "2021-01-01",
+    "provisional_end": "2025-12-31",
+    "operative": false,
+    "date_field_binding_status": "unbound"
+  },
+  "field_semantics": {
+    "date": {
+      "status": "unbound",
+      "source_field": null,
+      "definition": null,
+      "describes": null,
+      "timezone": null,
+      "start_inclusive": null,
+      "end_inclusive": null,
+      "missing_date_handling": null
+    },
+    "notice_type": {
+      "status": "unbound",
+      "source_field": null,
+      "definition": null,
+      "missing_value_handling": null
+    },
+    "topic": {
+      "status": "unbound",
+      "source_field": null,
+      "definition": null,
+      "missing_value_handling": null
+    },
+    "sender": {
+      "status": "unbound",
+      "source_field": null,
+      "definition": null,
+      "missing_value_handling": null
+    },
+    "recipient": {
+      "status": "unbound",
+      "source_field": null,
+      "definition": null,
+      "missing_value_handling": null
+    },
+    "jurisdiction": {
+      "status": "unbound",
+      "source_field": null,
+      "definition": null,
+      "describes_party_notice_authority_or_record": null,
+      "missing_value_handling": null
+    },
+    "country": {
+      "status": "unbound",
+      "source_field": null,
+      "definition": null,
+      "describes_party_notice_authority_or_record": null,
+      "missing_value_handling": null,
+      "not_a_proxy_for": "jurisdiction"
+    },
+    "action": {
+      "status": "unbound",
+      "reported_or_requested_action": {
+        "source_field": null,
+        "definition": "What the notice or Lumen record reports or requests; not evidence of action actually taken",
+        "source_owner": null,
+        "missing_value_handling": null
+      },
+      "action_actually_taken": {
+        "source_field": null,
+        "definition": "An action actually taken by a separately identified actor; never inferred from a request, report, or missing value",
+        "source_owner": null,
+        "missing_value_handling": null
+      },
+      "lumen_record_state": {
+        "source_field": null,
+        "definition": "The state of the Lumen record itself; not a requested action or evidence of action actually taken",
+        "source_owner": "Lumen",
+        "missing_value_handling": null
+      },
+      "missingness_breakdowns": [
+        "submitter",
+        "recipient",
+        "notice_type",
+        "study_interval",
+        "ecosystem"
+      ],
+      "coverage_rule": null,
+      "comparison_basis": null,
+      "comparisons_enabled": false
+    },
+    "ecosystem": {
+      "status": "unbound",
+      "source_field": null,
+      "definition": null,
+      "missing_value_handling": null
+    },
+    "inclusion_confidence": {
+      "status": "unbound",
+      "source_field": null,
+      "definition": null,
+      "missing_value_handling": null
+    }
+  },
+  "analysis": {
+    "comparisons_allowed": false,
+    "action_rate_comparisons": {
+      "allowed": false,
+      "coverage_and_missingness_denominators_required": true,
+      "denominator_strata": [
+        "provider_or_recipient",
+        "time_period",
+        "notice_type",
+        "ecosystem"
+      ],
+      "comparable_reporting_semantics_required": true,
+      "missing_action_is_no_action": false
+    }
+  },
+  "collection_limits": {
+    "minimum_seconds_between_requests": 1,
+    "default_maximum_notices_per_run": 500,
+    "absolute_ceiling_notices_per_run": 1000,
+    "stop_when_ceiling_would_be_exceeded": true
+  },
+  "publication_minimization": {
+    "precedence": "Privacy and data minimization override public auditability",
+    "allowed_binary_artifacts": [],
+    "public_source_index": {
+      "allowed_fields": [
+        "lumen_notice_id",
+        "derived_inclusion_basis"
+      ],
+      "derived_inclusion_basis_constraint": "Bounded categorical values fixed by the approved manifest; no raw source text or query match",
+      "forbidden_content": [
+        "raw_urls",
+        "bulk_urls",
+        "raw_notice_text",
+        "raw_query_matches",
+        "unnecessary_personal_information"
+      ]
+    },
+    "unsafe_claim_disposition": "omit_or_weaken"
+  },
+  "approval": {
+    "status": "pending",
+    "approver": null,
+    "approved_at": null,
+    "source_commit": null,
+    "content_sha256": null,
+    "validator": {
+      "required": true,
+      "name": "query-manifest-validator",
+      "implementation_status": "implemented",
+      "result": "not_run",
+      "validated_at": null
+    }
+  },
+  "change_control": {
+    "material_changes_require_new_version": true,
+    "material_change_fields": [
+      "query_identifiers",
+      "query_terms",
+      "study_interval",
+      "field_semantics",
+      "missingness_rules",
+      "inclusion_and_exclusion_rules",
+      "collection_limits",
+      "analysis_comparisons",
+      "publication_minimization"
+    ],
+    "post_collection_changes_require_amendment_before_publication": true
+  },
+  "implementation": {
+    "collector_status": "future",
+    "analysis_pipeline_status": "future"
+  }
+}

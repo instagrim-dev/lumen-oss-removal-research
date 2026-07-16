@@ -1,0 +1,27 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Credentials and local configuration
+secrets/
+private/
+
+# Raw or unreviewed research material
+data/raw/
+data/private/
+data/cache/
+raw/
+
+# Generated scratch output
+tmp/
+scratch/
+*.tmp
+
+# Local tooling state
+.bmo/
+.idea/
+.ruff_cache/
+.vscode/
+__pycache__/
+*.py[cod]

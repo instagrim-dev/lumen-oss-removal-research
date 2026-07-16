@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use a released version of this public policy research brief, please cite its archived release."
+title: "Removal Requests and the Open-Source Software Supply Chain: A Public Policy Research Brief"
+type: report
+authors:
+  - family-names: "Maye-Hobbs"
+    given-names: "Jonathan"
+    affiliation: "Independent researcher; professional affiliation: JMH Blockchain, LLC"
+repository-code: "https://github.com/instagrim-dev/lumen-oss-removal-research"
+url: "https://github.com/instagrim-dev/lumen-oss-removal-research"
+license: CC-BY-4.0

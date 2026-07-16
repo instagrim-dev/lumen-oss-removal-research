@@ -1,0 +1,28 @@
+name: Validate research contract
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate repository contract
+        run: python scripts/validate_repository.py
+
+      - name: Run validator tests
+        run: python -m unittest discover -s tests -p "test_*.py"
